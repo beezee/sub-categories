@@ -46,6 +46,7 @@ object example extends App {
     }
   }
 
+  // TODO - how can i erase more info from this? parameterize Show/ShowAlg?
   implicit def totalAlgebra[F[_]]: TotalAlgebra[Show, F, ShowAlg] = new TotalAlgebra[Show, F, ShowAlg] {
     def interp(sa: ShowAlg[F]): (Show ~> F) = showInterp[F](sa)
   }
